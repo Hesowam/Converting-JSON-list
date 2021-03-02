@@ -50,7 +50,9 @@ function corsEnabled (url) {
   xhr.open('HEAD', url, false)
   try {
     xhr.send()
-  } catch (e) {}
+  } catch (e) {
+    error.log('fileSaver error')
+  }
   return xhr.status >= 200 && xhr.status <= 299
 }
 

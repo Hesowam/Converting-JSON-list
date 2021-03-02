@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YummyAnime to Shikimori</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/fileSaver.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="container mt-5">
+            <h1 class="display-4">Converting the list from Yammyanime to Shikimori</h1>
+            <div class="row">
+                <div class="col-sm">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">The YummyAnime list</label>
+                            <textarea class="form-control input-text" id="exampleFormControlTextarea1" cols=50 rows=10 style="min-height: 200px;height: 200px; max-height: 200px;">{ "list_id":3, "ya_id":3406, "title":"Арифурэта: Сильнейший ремесленник в мире", "target_id":36882, "score":null}</textarea>
+                          </div>  
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input file-selector" onchange="getTextFromFile(this)" id="inputGroupFile04" accept=".json" aria-describedby="inputGroupFileAddon04">
+                              <label class="custom-file-label" for="inputGroupFile04">Choose a json file list</label>
+                            </div>
+                          </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">The Shikimori list</label>
+                        <textarea class="form-control Returned-text" id="exampleFormControlTextarea1" height="200" rows="3" readonly style="height: 200px;"></textarea>
+                        <div class="mt-3 float-right">
+                            <button type="button" class="btn btn-info" onclick="saveStaticDataToFile()">Download file</button>
+                            <button type="button" class="btn btn-success" onclick="encrypt()">Converting </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="error"></div>
+    </div>
+</body>
+</html>
